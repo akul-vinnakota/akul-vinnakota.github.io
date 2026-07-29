@@ -311,8 +311,16 @@ main {
   margin-right: auto;
 }
 
-.contact-section .button {
-  margin-top: 18px;
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.contact-buttons .button {
+  margin-top: 0;
 }
 
 footer {
@@ -325,13 +333,262 @@ footer {
   font-size: 0.88rem;
 }
 
+/* Security Knowledge page */
+
+.knowledge-hero {
+  min-height: 82vh;
+}
+
+.knowledge-hero h1 {
+  max-width: 1000px;
+  font-size: clamp(3.2rem, 8vw, 6.6rem);
+}
+
+.knowledge-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.knowledge-card,
+.framework-card,
+.project-connection,
+.evidence-card {
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(10px);
+}
+
+.knowledge-card {
+  min-height: 280px;
+  padding: 30px;
+  border-radius: 18px;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.knowledge-card:hover,
+.framework-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(123, 211, 255, 0.48);
+}
+
+.knowledge-card h3 {
+  margin: 16px 0;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+.knowledge-card > p:not(.project-number) {
+  color: var(--muted);
+}
+
+.knowledge-group {
+  margin-top: 90px;
+}
+
+.knowledge-heading {
+  margin-bottom: 30px;
+}
+
+.knowledge-heading h3 {
+  max-width: 780px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.knowledge-intro {
+  max-width: 840px;
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 1.04rem;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.topic-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(16, 34, 55, 0.7);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.16);
+}
+
+.topic-card summary {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  min-height: 92px;
+  padding: 24px 58px 24px 24px;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.topic-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.topic-card summary::after {
+  content: "+";
+  position: absolute;
+  right: 24px;
+  color: var(--primary);
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.topic-card[open] summary::after {
+  content: "−";
+}
+
+.topic-card[open] summary {
+  background: rgba(123, 211, 255, 0.07);
+  color: var(--primary);
+}
+
+.topic-code {
+  flex-shrink: 0;
+  color: var(--secondary);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+}
+
+.topic-content {
+  padding: 0 24px 26px;
+  border-top: 1px solid var(--border);
+}
+
+.topic-content h4 {
+  margin-top: 22px;
+  margin-bottom: 6px;
+  color: var(--primary);
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.topic-content p {
+  color: var(--muted);
+}
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.framework-card {
+  min-height: 250px;
+  padding: 26px;
+  border-radius: 16px;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.framework-card h3 {
+  margin: 14px 0 10px;
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+.framework-card p:not(.project-number) {
+  color: var(--muted);
+}
+
+.project-connection,
+.evidence-card {
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: 16px;
+}
+
+.project-connection p:last-child,
+.evidence-card p:last-child {
+  color: var(--muted);
+}
+
+.knowledge-note {
+  max-width: 820px;
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.reference-section {
+  text-align: center;
+}
+
+.reference-section > h2 {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.reference-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.reference-links a {
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--primary);
+  font-weight: 800;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.reference-links a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(123, 211, 255, 0.48);
+}
+
+@media (max-width: 1000px) {
+  .navbar nav {
+    gap: 18px;
+  }
+
+  .navbar nav a {
+    font-size: 0.84rem;
+  }
+}
+
 @media (max-width: 900px) {
   .project-grid,
-  .skills-grid {
+  .skills-grid,
+  .framework-grid {
     grid-template-columns: 1fr;
   }
 
-  .project-card {
+  .knowledge-overview-grid,
+  .topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card,
+  .framework-card {
     min-height: auto;
   }
 }
@@ -360,6 +617,23 @@ footer {
 
   .experience-card {
     padding: 24px;
+  }
+
+  .knowledge-group {
+    margin-top: 70px;
+  }
+
+  .topic-card summary {
+    min-height: 84px;
+    padding: 20px 52px 20px 20px;
+  }
+
+  .topic-card summary::after {
+    right: 20px;
+  }
+
+  .topic-content {
+    padding: 0 20px 22px;
   }
 }
 
