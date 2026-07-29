@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Security Knowledge | Akul Vinnakota</title>
+
+  <meta
+    name="description"
+    content="Akul Vinnakota explains application security, AI security, NIST CSF 2.0, and ISO/IEC 27001 concepts in clear and practical terms."
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <a href="index.html" class="logo">AV</a>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#appsec">Application & AI Security</a>
+      <a href="#frameworks">NIST & ISO</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero knowledge-hero">
+      <p class="eyebrow">SECURITY KNOWLEDGE</p>
+
+      <h1>How I understand cybersecurity.</h1>
+
+      <h2>
+        Connecting technical vulnerabilities, AI risks, security controls,
+        and business risk.
+      </h2>
+
+      <p class="hero-description">
+        I created this section to explain important cybersecurity concepts in
+        my own words. My goal is to show that I can understand technical risks
+        and communicate them clearly to both security teams and business
+        stakeholders.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#appsec" class="button primary-button">
+          Application & AI Security
+        </a>
+
+        <a href="#frameworks" class="button secondary-button">
+          NIST & ISO Frameworks
+        </a>
+
+        <a href="index.html" class="button secondary-button">
+          Back to Portfolio
+        </a>
+      </div>
+    </section>
+
+    <section id="appsec" class="section">
+      <p class="section-label">APPLICATION & AI SECURITY</p>
+      <h2>Understanding how modern applications can be attacked.</h2>
+
+      <p>
+        Application security to me means protecting the applications companies
+        use every day from attackers who want to disrupt services or steal
+        customer and employee information. Understanding how applications fail
+        helps developers and cybersecurity professionals build preventive
+        controls before attackers can take advantage of a weakness.
+      </p>
+
+      <div class="knowledge-overview-grid">
+        <article class="knowledge-card">
+          <p class="project-number">OWASP APPLICATION SECURITY</p>
+          <h3>Common application risks</h3>
+          <p>
+            My understanding of access control, injection, configuration,
+            cryptography, and security monitoring failures.
+          </p>
+          <div class="tags">
+            <span>OWASP</span>
+            <span>Secure Coding</span>
+            <span>Access Control</span>
+          </div>
+        </article>
+
+        <article class="knowledge-card">
+          <p class="project-number">OWASP LLM SECURITY</p>
+          <h3>Risks introduced by AI systems</h3>
+          <p>
+            My understanding of prompt manipulation, sensitive data exposure,
+            unsafe AI output, excessive permissions, and poisoned data.
+          </p>
+          <div class="tags">
+            <span>AI Security</span>
+            <span>LLM</span>
+            <span>Least Privilege</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="knowledge-group">
+        <div class="knowledge-heading">
+          <p class="section-label">OWASP APPLICATION SECURITY</p>
+          <h3>Five important application risks</h3>
+        </div>
+
+        <div class="topic-grid">
+          <details class="topic-card">
+            <summary>
+              <span>Broken Access Control</span>
+              <span class="topic-code">A01</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Broken access control happens when a user can access information,
+                permissions, or actions that they should not be authorized to use.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                An attacker may access another account, elevate privileges, move
+                laterally, or reach administrative functions and sensitive data.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Use server-side authorization, RBAC, least privilege, Zero Trust
+                principles, deny-by-default rules, and regular access reviews.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Injection</span>
+              <span class="topic-code">A05</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Injection happens when an application treats malicious input as
+                a trusted query or command, such as SQL or operating-system code.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                It can expose, modify, or delete data, bypass authentication,
+                interrupt a website, or execute unintended commands.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Use parameterized queries, input validation, secure code review,
+                least-privilege accounts, testing, and a WAF as an added layer.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Security Misconfiguration</span>
+              <span class="topic-code">A02</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Security misconfiguration happens when an application, server,
+                cloud service, or security tool is set up incorrectly.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                Default credentials, unnecessary services, exposed storage, or
+                detailed error messages can give attackers an easy path inside.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Use hardened baselines, remove unnecessary services, patch
+                systems, protect secrets, and continuously scan configurations.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Cryptographic Failures</span>
+              <span class="topic-code">A04</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Cryptographic failures happen when sensitive information is not
+                protected correctly while stored or transmitted.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                Passwords, tokens, financial data, or company information could
+                be exposed and used for fraud or account takeover.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Encrypt data at rest and in transit, use modern standards,
+                protect keys, rotate secrets, and securely hash passwords.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Logging & Alerting Failures</span>
+              <span class="topic-code">A09</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Logging and alerting failures happen when an organization lacks
+                the visibility needed to recognize and investigate suspicious activity.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                Attackers may stay inside an environment longer, move laterally,
+                steal data, and leave the security team without a clear timeline.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Centralize logs, protect their integrity, create useful alerts,
+                tune detections, define retention, and assign investigation ownership.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="knowledge-group">
+        <div class="knowledge-heading">
+          <p class="section-label">OWASP LLM SECURITY</p>
+          <h3>Five important AI security risks</h3>
+        </div>
+
+        <div class="topic-grid">
+          <details class="topic-card">
+            <summary>
+              <span>Prompt Injection</span>
+              <span class="topic-code">LLM01</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Prompt injection happens when malicious instructions try to make
+                an AI system ignore its intended rules or perform an unauthorized action.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                An attacker may manipulate responses, expose internal information,
+                or misuse tools connected to the AI application.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Treat prompts and external content as untrusted, limit tool
+                permissions, validate outputs, monitor abuse, and require approval
+                for high-impact actions.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Sensitive Information Disclosure</span>
+              <span class="topic-code">LLM02</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                This happens when an AI reveals customer data, credentials,
+                internal documents, system instructions, or other private information.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                Exposed information can support phishing, fraud, account takeover,
+                intellectual-property theft, or another attack.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Limit data access, classify and mask sensitive information,
+                enforce role-based permissions, and prevent restricted data from
+                entering unapproved AI systems.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Improper Output Handling</span>
+              <span class="topic-code">LLM05</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Improper output handling happens when another system automatically
+                trusts AI-generated content as safe and accurate.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                Malicious or incorrect output could be executed as code, sent to a
+                database, displayed as unsafe HTML, or used to change system behavior.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Validate, sanitize, encode, and structure AI output before another
+                application uses it. High-impact code or commands should receive human review.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Excessive Agency</span>
+              <span class="topic-code">LLM06</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Excessive agency means an AI system has more permissions or
+                decision-making power than it actually needs.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                A manipulated AI could send messages, access files, change accounts,
+                delete information, or affect business operations.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Follow least privilege, allowlist tools, separate permissions,
+                use rate limits, monitor activity, and require approval before
+                high-impact actions.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Data & Model Poisoning</span>
+              <span class="topic-code">LLM04</span>
+            </summary>
+            <div class="topic-content">
+              <h4>My understanding</h4>
+              <p>
+                Data and model poisoning happens when someone manipulates the
+                information used to train, update, or guide an AI system.
+              </p>
+
+              <h4>Why it matters</h4>
+              <p>
+                Poisoned data can cause misinformation, biased results, hidden
+                backdoors, and poor decisions that employees may still trust.
+              </p>
+
+              <h4>How organizations reduce it</h4>
+              <p>
+                Verify data sources, restrict who can modify datasets, track
+                changes, scan uploaded content, test model behavior, and approve
+                major updates.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="frameworks" class="section">
+      <p class="section-label">NIST & ISO FRAMEWORKS</p>
+      <h2>Connecting security controls to business risk.</h2>
+
+      <p>
+        A cybersecurity framework gives organizations an organized way to
+        manage risk instead of purchasing random security tools and hoping they
+        cover every weakness. Frameworks help define priorities, responsibilities,
+        evidence, and what should happen before, during, and after an incident.
+      </p>
+
+      <div class="knowledge-group">
+        <div class="knowledge-heading">
+          <p class="section-label">NIST CYBERSECURITY FRAMEWORK 2.0</p>
+          <h3>Six functions that organize cybersecurity risk</h3>
+        </div>
+
+        <div class="framework-grid">
+          <article class="framework-card">
+            <p class="project-number">GV</p>
+            <h3>Govern</h3>
+            <p>
+              Establishes how cybersecurity decisions are made through policies,
+              roles, risk tolerance, leadership oversight, and third-party expectations.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <p class="project-number">ID</p>
+            <h3>Identify</h3>
+            <p>
+              Focuses on understanding systems, data, users, suppliers,
+              vulnerabilities, and the risks that could affect the organization.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <p class="project-number">PR</p>
+            <h3>Protect</h3>
+            <p>
+              Uses safeguards such as MFA, RBAC, encryption, firewalls,
+              training, system hardening, and secure development practices.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <p class="project-number">DE</p>
+            <h3>Detect</h3>
+            <p>
+              Uses logs, SIEM alerts, detection rules, endpoint monitoring,
+              and analysis to identify suspicious activity as quickly as possible.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <p class="project-number">RS</p>
+            <h3>Respond</h3>
+            <p>
+              Covers investigation, containment, communication, mitigation,
+              documentation, and the actions taken during a cybersecurity incident.
+            </p>
+          </article>
+
+          <article class="framework-card">
+            <p class="project-number">RC</p>
+            <h3>Recover</h3>
+            <p>
+              Restores systems and business operations, validates recovery,
+              communicates progress, and applies lessons learned after an incident.
+            </p>
+          </article>
+        </div>
+
+        <div class="project-connection">
+          <p class="section-label">HOW THIS CONNECTS TO MY WORK</p>
+          <p>
+            My stateful firewall and DevSecOps projects connect to Protect. My
+            Sigma detection engineering project and Microsoft Sentinel experience
+            connect to Detect and Respond. My asset-management and infrastructure
+            experience connect to Identify and Recover.
+          </p>
+        </div>
+      </div>
+
+      <div class="knowledge-group">
+        <div class="knowledge-heading">
+          <p class="section-label">ISO/IEC 27001 & COMPLIANCE</p>
+          <h3>How organizations manage and prove information security</h3>
+        </div>
+
+        <p class="knowledge-intro">
+          Cybersecurity compliance to me means that an organization follows
+          required standards, policies, laws, or contractual expectations and
+          can prove that its controls are operating. Security tools alone are not
+          enough because they can be misconfigured, ignored, or poorly managed.
+        </p>
+
+        <div class="topic-grid">
+          <details class="topic-card">
+            <summary>
+              <span>Information Security Management System</span>
+              <span class="topic-code">ISMS</span>
+            </summary>
+            <div class="topic-content">
+              <p>
+                An ISMS connects leadership, employees, policies, risk
+                assessments, controls, evidence, audits, and improvement into one
+                organized security-management system.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Risk Assessment</span>
+              <span class="topic-code">RISK</span>
+            </summary>
+            <div class="topic-content">
+              <p>
+                A risk assessment identifies what could go wrong, which assets
+                could be affected, how likely the event is, and how serious the
+                business impact could be.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Risk Treatment</span>
+              <span class="topic-code">PLAN</span>
+            </summary>
+            <div class="topic-content">
+              <p>
+                Risk treatment turns an identified risk into action. An
+                organization may reduce, avoid, transfer, or formally accept the risk.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Asset Management</span>
+              <span class="topic-code">ASSET</span>
+            </summary>
+            <div class="topic-content">
+              <p>
+                Asset management means knowing which devices, applications,
+                cloud resources, accounts, and sensitive information the company
+                owns, where they are, and who is responsible for them.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Access Control</span>
+              <span class="topic-code">ACCESS</span>
+            </summary>
+            <div class="topic-content">
+              <p>
+                Access control makes sure users only receive the permissions
+                required for their roles through authentication, authorization,
+                MFA, least privilege, and regular access reviews.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Incident Management</span>
+              <span class="topic-code">IR</span>
+            </summary>
+            <div class="topic-content">
+              <p>
+                Incident management defines how a company prepares for,
+                detects, investigates, contains, communicates, documents, and
+                learns from cybersecurity incidents.
+              </p>
+            </div>
+          </details>
+
+          <details class="topic-card">
+            <summary>
+              <span>Auditing & Improvement</span>
+              <span class="topic-code">AUDIT</span>
+            </summary>
+            <div class="topic-content">
+              <p>
+                Auditing checks whether security controls work as claimed.
+                Findings should lead to corrective actions, retesting, updated
+                policies, and continuous improvement.
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="evidence-card">
+          <p class="section-label">EXAMPLES OF SECURITY EVIDENCE</p>
+          <p>
+            Policies, access reviews, authentication logs, training records,
+            incident tickets, vulnerability reports, backup tests, security-tool
+            configurations, audit findings, and corrective-action records.
+          </p>
+        </div>
+
+        <p class="knowledge-note">
+          This section demonstrates my personal understanding of these
+          frameworks. It is not a claim of ISO certification or an official
+          compliance assessment.
+        </p>
+      </div>
+    </section>
+
+    <section class="section reference-section">
+      <p class="section-label">REFERENCE FRAMEWORKS</p>
+      <h2>Sources used to guide my learning.</h2>
+
+      <div class="reference-links">
+        <a
+          href="https://owasp.org/Top10/2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OWASP Top 10:2025 →
+        </a>
+
+        <a
+          href="https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OWASP Top 10 for LLM Applications 2025 →
+        </a>
+
+        <a
+          href="https://www.nist.gov/cyberframework"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          NIST Cybersecurity Framework 2.0 →
+        </a>
+
+        <a
+          href="https://www.iso.org/standard/27001"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ISO/IEC 27001:2022 →
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      © <span id="current-year"></span> Akul Vinnakota.
+      Built with HTML, CSS, JavaScript, and GitHub Pages.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
