@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#090c0b" name="theme-color"/><meta content="Akul Vinnakota | Security engineering, AI red teaming, prompt injection, agent security, detection engineering, and practical open-source tooling." name="description"/><title>Akul Vinnakota | AI Security &amp; Security Engineering</title><style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+:root{--bg:#090c0b;--panel:#111714;--line:#29362f;--fg:#e8f2e8;--muted:#9aaba0;--green:#b4ff86;--darkgreen:#163522}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 'DM Sans',sans-serif;position:relative}body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:linear-gradient(#233128 1px,transparent 1px),linear-gradient(90deg,#233128 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,#000,transparent 75%)}a{color:inherit;text-decoration:none}button{font:inherit}::selection{background:var(--green);color:#081009}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}.mono,.eyebrow,.sectionno,.tag,.refcat,.num,.pill,.brand,nav .links,.btn,.arr,.terminal,footer{font-family:'Space Mono',monospace}.eyebrow{font-size:11px;letter-spacing:.1em;color:var(--green);text-transform:uppercase}.muted{color:var(--muted)}nav{position:sticky;top:0;z-index:20;background:#090c0bec;backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:70px;gap:20px}.brand{font-size:13px;font-weight:700;letter-spacing:.06em}.brand em{font-style:normal;color:var(--green)}nav .links{display:flex;gap:24px;flex-wrap:wrap;font-size:11px;color:var(--muted)}nav a:hover,a:focus-visible{color:var(--green)}.hero{padding:102px 0 100px;position:relative;border-bottom:1px solid var(--line)}.hero:after{content:'+';font:250px 'Space Mono';color:#263b2b;position:absolute;right:0;top:5px;z-index:-1}.overline{display:flex;align-items:center;gap:12px;color:var(--green);font:12px 'Space Mono';letter-spacing:.08em}.dot{width:8px;height:8px;background:var(--green);box-shadow:0 0 16px #9ef875;border-radius:50%}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-.045em}h1{font-size:clamp(56px,10vw,122px);margin:23px 0 18px;font-weight:700;letter-spacing:-.077em}h1 span{display:block;color:var(--green)}.hero .lead{max-width:690px;color:#c7d6cb;font-size:clamp(17px,2vw,21px);line-height:1.55}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border:1px solid var(--green);background:var(--green);color:#0b130a;font-size:11px;font-weight:700;transition:.2s}.btn:hover{background:transparent;color:var(--green)}.btn.secondary{background:transparent;color:var(--fg);border-color:#526255}.btn.secondary:hover{border-color:var(--green);color:var(--green)}.strip{display:flex;gap:12px 28px;flex-wrap:wrap;padding-top:25px;margin-top:55px;border-top:1px solid var(--line);color:#9daf9d;font:11px 'Space Mono'}section{padding:80px 0;border-bottom:1px solid var(--line);scroll-margin-top:70px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:30px}.section-head h2{margin:10px 0 0}h2{font-size:clamp(31px,5vw,53px)}.section-head p{max-width:360px;margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.two{grid-template-columns:repeat(2,1fr)}.panel,.tool{background:var(--panel);border:1px solid var(--line);padding:25px;min-width:0}.panel h3,.tool h3{font-size:22px;margin:12px 0}.panel p,.tool p{color:var(--muted);font-size:14px}.tag{font-size:10px;display:inline-block;margin:5px 4px 0 0;padding:4px 8px;color:var(--green);border:1px solid #33553a}.panel .feature{color:#cbdace}.panel .detail{font-size:12px;color:#879a8b}.panel a:not(.btn){color:var(--green)}.itemtop{display:flex;align-items:center;justify-content:space-between;gap:8px}.pill{color:var(--green);font-size:10px}.sep{margin-top:17px;padding-top:14px;border-top:1px solid var(--line)}.small{font-family:'Space Mono';font-size:11px}.tool{transition:transform .2s,border-color .2s}.tool:hover{border-color:var(--green);transform:translateY(-3px)}.tooltop{display:flex;justify-content:space-between;color:var(--green)}.tool b{font-size:12px;color:#e3ebe3}.tool p{margin:10px 0 0}.workflow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:25px}.step{background:var(--panel);border:1px solid var(--line);padding:18px}.step b{font:12px 'Space Mono';color:var(--green)}.step h3{font-size:19px;margin:12px 0}.step p{font-size:12px;color:var(--muted);margin:0}.casegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.case h3{font-size:24px}.case strong{font-family:'Space Mono';font-size:11px;color:var(--green);text-transform:uppercase}.case p{margin:5px 0 17px}.callout{border-left:2px solid var(--green);padding:14px 20px;margin-top:20px;background:#142018;color:#d0e4d1;font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.filter{background:none;color:var(--muted);border:1px solid var(--line);padding:9px 12px;cursor:pointer;font:11px 'Space Mono'}.filter.active,.filter:hover{background:var(--green);color:#071007;border-color:var(--green)}.references{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.ref{display:flex;gap:12px;align-items:center;border:1px solid var(--line);padding:13px 15px;font-size:13px;background:#101612}.ref:hover{border-color:var(--green)}.ref[hidden]{display:none}.refcat{flex:0 0 78px;font-size:9px;color:var(--green)}.arr{margin-left:auto;color:var(--green)}.research-note{font-size:12px;color:var(--muted);margin:15px 0}.terminal{padding:22px;background:#080f0a;color:#b7e8b9;border:1px solid var(--line);white-space:pre-wrap;font-size:12px;overflow:auto}footer{padding:25px 0 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:11px}#topBtn{position:fixed;right:22px;bottom:22px;border:1px solid var(--green);color:var(--green);background:#0a120b;padding:10px 14px;cursor:pointer;opacity:0;pointer-events:none;transition:.2s}#topBtn.show{opacity:1;pointer-events:auto}.skip{position:absolute;left:-9999px}.skip:focus{left:12px;top:12px;z-index:40;background:var(--green);color:#000;padding:8px}@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(2,1fr)}.section-head{display:block}.section-head p{margin-top:12px}.hero{padding:75px 0}}@media(max-width:600px){.wrap{width:min(100% - 28px,1160px)}nav .wrap{align-items:flex-start;padding:16px 0;flex-direction:column;gap:10px}nav .links{gap:13px;font-size:10px}.grid,.two,.casegrid,.references{grid-template-columns:1fr}.workflow{grid-template-columns:1fr 1fr}.hero{padding:60px 0}.hero:after{display:none}section{padding:55px 0}.refcat{flex-basis:65px}.brand{font-size:12px}h1{font-size:clamp(49px,11vw,75px)}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+/* Minimal headings with interactive right-side terminal */
+.hero{padding:92px 0 96px;position:relative;border-bottom:1px solid var(--line);overflow:hidden;isolation:isolate}.hero:after{display:none}.hero-grid{display:block;min-height:520px;position:relative;z-index:1}.hero-copy{max-width:560px;position:relative;z-index:2}.hero h1{text-shadow:0 6px 35px #090c0b,0 0 65px #090c0b;margin-bottom:22px}.hero .buttons{margin:0}
+.page-shell{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:28px;align-items:start;position:relative}.content-column{min-width:0}.terminal-column{position:sticky;top:92px;align-self:start}
+.live-terminal{position:relative;background:linear-gradient(180deg,#071009 0%,#08120d 100%);border:1px solid #355742;box-shadow:0 30px 90px #0008,0 0 40px #6bdc7824;min-height:calc(100vh - 120px);display:flex;flex-direction:column;overflow:hidden}
+.live-terminal:before{content:'';position:absolute}.term-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-bottom:1px solid #2f4d39;color:#b7d7bb;font:10px 'Space Mono',monospace;background:#09130d}.term-lights{color:#8aec98;letter-spacing:4px}.term-meta{display:flex;gap:8px;flex-wrap:wrap;padding:12px 14px;border-bottom:1px solid #203328;background:#0a140f}.meta-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid #2e4a36;padding:4px 8px;color:#a8d8ac;font:10px 'Space Mono',monospace}.meta-pill:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px #9fff9a}
+.term-output{flex:1;padding:16px 16px 14px 16px;overflow:auto;font:12px/1.75 'Space Mono',monospace;color:#bddbbf;background-image:linear-gradient(rgba(32,54,41,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(32,54,41,.10) 1px,transparent 1px);background-size:80px 80px;background-position:-1px -1px}.term-line{display:block;white-space:pre-wrap;word-break:break-word}.term-line.dim{color:#7a9480}.term-line.ok{color:#94e39b}.term-line.warn{color:#e0c07b}.term-line.bad{color:#f29a9a}.term-line.cmd{color:#d4e7d5}.term-line.help{color:#9fb8a2}.term-inputbar{border-top:1px solid #2a4031;background:#09110c;padding:12px 14px}.term-hint{font:10px 'Space Mono',monospace;color:#87a18b;margin-bottom:8px}.term-form{display:flex;gap:8px;align-items:center}.prompt{color:var(--green);font:12px 'Space Mono',monospace}.term-input{flex:1;background:#050b08;border:1px solid #31503d;color:#dbefdc;padding:10px 12px;font:12px 'Space Mono',monospace;outline:none}.term-input:focus{border-color:var(--green);box-shadow:0 0 0 1px rgba(180,255,134,.15)}.term-btn{padding:10px 12px;border:1px solid var(--green);background:var(--green);color:#071007;font:11px 'Space Mono',monospace;font-weight:700;cursor:pointer}.term-btn:hover{background:transparent;color:var(--green)}.status-row{display:flex;justify-content:space-between;gap:8px;margin-top:8px;font:10px 'Space Mono',monospace;color:#7f9785}.cursor{animation:blink 1s step-end infinite}@keyframes blink{50%{opacity:0}}
+@media(max-width:1100px){.page-shell{grid-template-columns:minmax(0,1fr) 360px;gap:20px}.live-terminal{min-height:620px}.term-output{font-size:11px}}
+@media(max-width:900px){.page-shell{grid-template-columns:1fr}.terminal-column{position:relative;top:auto;order:-1}.live-terminal{min-height:500px}.hero-grid{min-height:auto}.hero-copy{max-width:none}}
+@media(max-width:700px){.hero{padding:60px 0 70px}.term-form{flex-wrap:wrap}.term-btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.cursor{animation:none}}.section-head{margin-bottom:26px}.section-head h2{margin:8px 0 0}
+@media(max-width:1100px){.site-attack-chain{width:min(41vw,460px);opacity:.36}.chain-node{width:min(100%,220px)}}@media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:24px;min-height:auto}.hero-copy{max-width:none}.attack-scene{min-height:auto}.attack-frame{min-height:540px}.site-attack-chain{display:none}}
+@media(max-width:700px){.hero{padding:60px 0}.attack-output{font-size:10px}.attack-frame{min-height:500px}.attack-bar{font-size:9px}.attack-summary{gap:6px}.mini-pill{font-size:9px;padding:4px 7px}}
+@media(prefers-reduced-motion:reduce){.terminal-line{animation:none;opacity:1}.caret{animation:none}}
+.term-shortcuts{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}.term-shortcuts button{background:#101c13;border:1px solid #365441;color:#a9d9af;font:10px 'Space Mono',monospace;padding:6px 9px;cursor:pointer}.term-shortcuts button:hover,.term-shortcuts button:focus-visible{border-color:var(--green);color:var(--green)}
+
+/* Terminal focus: visible output pane, no page-length output expansion */
+.page-shell{width:min(1440px,calc(100% - 56px));grid-template-columns:minmax(0,1fr) minmax(480px,540px);gap:34px}
+.terminal-column{position:sticky;top:86px;min-width:0}
+.live-terminal{height:calc(100dvh - 106px);min-height:530px;max-height:850px;overflow:hidden;box-shadow:0 24px 75px #000a,0 0 58px #7fff7924;border-color:#477b50}
+.term-output{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#456b4b #0b160e;font-size:12px;line-height:1.76}
+.term-output::-webkit-scrollbar{width:9px}.term-output::-webkit-scrollbar-thumb{background:#3a6042;border:2px solid #0b160e;border-radius:8px}
+.term-head{padding:15px 16px}.term-inputbar{flex:0 0 auto;padding:13px 15px}.term-hint{line-height:1.6}
+.content-column{min-width:0}.content-column .grid.two{grid-template-columns:1fr}.content-column .grid{grid-template-columns:repeat(2,minmax(0,1fr))}.content-column .workflow{grid-template-columns:repeat(2,minmax(0,1fr))}.content-column .references{grid-template-columns:1fr}.content-column .casegrid{grid-template-columns:1fr}
+@media(max-width:1150px){.page-shell{grid-template-columns:minmax(0,1fr) minmax(390px,45%);gap:20px}.live-terminal{min-height:500px}}
+@media(max-width:900px){.page-shell{width:min(100% - 30px,760px);grid-template-columns:minmax(0,1fr)}.terminal-column{position:relative;top:auto;order:-1}.live-terminal{height:560px;min-height:0;max-height:none}.content-column .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.page-shell{width:calc(100% - 28px)}.live-terminal{height:530px}.term-head{font-size:9px}.term-output{font-size:11px}.content-column .grid,.content-column .workflow{grid-template-columns:1fr}}
+@media(max-height:660px) and (min-width:901px){.live-terminal{height:calc(100dvh - 90px);min-height:400px}.term-hint{display:none}.term-meta{padding:8px 12px}}
+
+/* Short, occasional glitch on the name; readable between bursts. */
+.glitch-name .glitch-row{display:block;position:relative;width:max-content;max-width:100%;line-height:1.12;isolation:isolate}
+.glitch-name .glitch-first{color:var(--fg)}
+.glitch-name .glitch-last{color:var(--green)}
+.glitch-name .glitch-row::before,.glitch-name .glitch-row::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;opacity:0;white-space:nowrap;color:inherit}
+.glitch-name .glitch-row::before{text-shadow:-2px 0 #54ffe3;animation:nameGlitchA 8.5s infinite step-end}
+.glitch-name .glitch-row::after{text-shadow:2px 0 #ff6d88;animation:nameGlitchB 8.5s infinite step-end}
+.glitch-name .glitch-last::before,.glitch-name .glitch-last::after{animation-delay:1.7s}
+@keyframes nameGlitchA{0%,35%,36.4%,37.3%,38.4%,70%,71.2%,72.1%,100%{opacity:0;transform:none}35.4%{opacity:.78;transform:translate(-3px,1px);clip-path:inset(15% 0 62% 0)}36%{opacity:.64;transform:translate(3px,-1px);clip-path:inset(60% 0 14% 0)}37.8%{opacity:.9;transform:translate(-2px,0);clip-path:inset(41% 0 39% 0)}70.5%{opacity:.65;transform:translate(-2px,1px);clip-path:inset(77% 0 5% 0)}}
+@keyframes nameGlitchB{0%,35%,36.4%,37.3%,38.4%,70%,71.2%,72.1%,100%{opacity:0;transform:none}35.4%{opacity:.7;transform:translate(2px,-1px);clip-path:inset(56% 0 20% 0)}36%{opacity:.72;transform:translate(-3px,1px);clip-path:inset(19% 0 61% 0)}37.8%{opacity:.85;transform:translate(3px,1px);clip-path:inset(70% 0 10% 0)}70.5%{opacity:.6;transform:translate(3px,-1px);clip-path:inset(25% 0 57% 0)}}
+@media(prefers-reduced-motion:reduce){.glitch-name .glitch-row::before,.glitch-name .glitch-row::after{animation:none!important;opacity:0!important}}
+
+/* Signature glitch: immediate boot distortion, then infrequent burst interference. */
+.glitch-name{animation:nameBoot .85s steps(2,end) both}
+.glitch-name .glitch-row::before{animation:nameGlitchA 5.6s infinite step-end}
+.glitch-name .glitch-row::after{animation:nameGlitchB 5.6s infinite step-end}
+.glitch-name .glitch-last::before,.glitch-name .glitch-last::after{animation-delay:.22s}
+@keyframes nameBoot{0%{opacity:.16;filter:blur(9px);transform:translateX(-9px)}15%{opacity:1;filter:blur(1px);transform:translateX(7px)}25%{opacity:.45;transform:translateX(-5px)}38%{opacity:1;filter:blur(3px);transform:translateX(4px)}52%{opacity:.6;filter:blur(0);transform:translateX(-2px)}70%,100%{opacity:1;filter:none;transform:none}}
+/* Only section/subsection text gets copies; links and body copy remain still. */
+.section-head h2,.content-column section > h2,.panel h3,.tool h3,.case h3,.step h3{position:relative;isolation:isolate;width:fit-content;max-width:100%}
+.section-head h2::before,.section-head h2::after,.content-column section > h2::before,.content-column section > h2::after,.panel h3::before,.panel h3::after,.tool h3::before,.tool h3::after,.case h3::before,.case h3::after,.step h3::before,.step h3::after{content:attr(data-glitch);position:absolute;inset:0;opacity:0;pointer-events:none;color:inherit;white-space:nowrap;max-width:100%;overflow:hidden}
+.section-head h2::before,.content-column section > h2::before,.panel h3::before,.tool h3::before,.case h3::before,.step h3::before{text-shadow:-2px 0 #5fffee;animation:subtitleFuzz 9s infinite steps(1,end)}
+.section-head h2::after,.content-column section > h2::after,.panel h3::after,.tool h3::after,.case h3::after,.step h3::after{text-shadow:2px 0 #f66c91;animation:subtitleFuzz 9s 70ms infinite steps(1,end)}
+@keyframes subtitleFuzz{0%,44%,45.8%,46.8%,47.6%,100%{opacity:0;transform:none}44.3%{opacity:.74;transform:translateX(-3px);clip-path:inset(12% 0 59% 0)}45.2%{opacity:.52;transform:translateX(2px);clip-path:inset(62% 0 12% 0)}47%{opacity:.64;transform:translateX(-1px);clip-path:inset(35% 0 36% 0)}}
+/* Terminal atmosphere is visual only; all commands and input remain clickable. */
+.live-terminal{isolation:isolate;box-shadow:0 24px 75px #000b,0 0 0 1px #76ff8430,0 0 58px #7fff7937}
+.live-terminal::after{content:'';position:absolute;inset:0;z-index:5;pointer-events:none;opacity:.10;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,#9efaab 4px,transparent 5px);mix-blend-mode:screen}
+.term-head{position:relative;text-shadow:0 0 9px #9bffa055;letter-spacing:.025em}
+.term-head::after{content:'';position:absolute;bottom:0;left:0;height:1px;width:35%;background:linear-gradient(90deg,transparent,var(--green),transparent);animation:signalSweep 4s linear infinite}
+@keyframes signalSweep{0%{transform:translateX(-100%)}100%{transform:translateX(380%)}}
+.term-output{scroll-behavior:smooth;text-shadow:0 0 7px rgba(122,255,152,.12)}
+.term-line{animation:logPop .17s steps(2,end)}
+@keyframes logPop{from{opacity:.2;filter:blur(2px)}to{opacity:1;filter:none}}
+.term-input:focus{box-shadow:0 0 0 1px #b4ff8640,0 0 17px #9cff8920}
+@media(prefers-reduced-motion:reduce){.glitch-name,.glitch-name .glitch-row::before,.glitch-name .glitch-row::after,.section-head h2::before,.section-head h2::after,.content-column section > h2::before,.content-column section > h2::after,.panel h3::before,.panel h3::after,.tool h3::before,.tool h3::after,.case h3::before,.case h3::after,.step h3::before,.step h3::after,.term-head::after,.term-line{animation:none!important}.glitch-name{opacity:1!important;filter:none!important;transform:none!important}}
+
+/* Organic signal interference: irregular microbursts, never a metronomic flash. */
+.glitch-name{animation:none!important}
+.glitch-name .glitch-row{animation:none!important;text-shadow:none}
+.glitch-name .glitch-row::before{animation:organicGlitchC 3.4s steps(1,end) infinite!important}
+.glitch-name .glitch-row::after{animation:organicGlitchM 3.4s steps(1,end) infinite!important}
+.glitch-name .glitch-last::before{animation-delay:-.21s!important}
+.glitch-name .glitch-last::after{animation-delay:-.34s!important}
+@keyframes organicGlitchC{
+  0%,3.2%,16.7%,19.9%,35.8%,37.5%,54.4%,56.3%,71.9%,74.6%,90.5%,92.3%,100%{opacity:0;transform:none;clip-path:inset(0)}
+  1%{opacity:.56;transform:translate(-2px,0);clip-path:inset(12% 0 61% 0)}
+  2.2%{opacity:.42;transform:translate(1px,0);clip-path:inset(67% 0 15% 0)}
+  18.1%{opacity:.68;transform:translate(-3px,1px);clip-path:inset(48% 0 33% 0)}
+  36.7%{opacity:.48;transform:translate(2px,-1px);clip-path:inset(23% 0 55% 0)}
+  55.1%{opacity:.58;transform:translate(-2px,0);clip-path:inset(70% 0 10% 0)}
+  73%{opacity:.38;transform:translate(1px,1px);clip-path:inset(14% 0 68% 0)}
+  91.2%{opacity:.54;transform:translate(-2px,-1px);clip-path:inset(39% 0 39% 0)}
+}
+@keyframes organicGlitchM{
+  0%,4.1%,15.3%,18.2%,33.7%,36.5%,52.9%,55.5%,69.8%,72.3%,88.4%,91.2%,100%{opacity:0;transform:none;clip-path:inset(0)}
+  2.7%{opacity:.4;transform:translate(2px,0);clip-path:inset(61% 0 14% 0)}
+  16.1%{opacity:.58;transform:translate(3px,-1px);clip-path:inset(25% 0 59% 0)}
+  34.6%{opacity:.43;transform:translate(-2px,1px);clip-path:inset(63% 0 18% 0)}
+  54.1%{opacity:.6;transform:translate(2px,0);clip-path:inset(8% 0 77% 0)}
+  71%{opacity:.45;transform:translate(2px,-1px);clip-path:inset(54% 0 28% 0)}
+  89.8%{opacity:.55;transform:translate(3px,0);clip-path:inset(26% 0 57% 0)}
+}
+/* Clearly interactive command line, even before the field gets focus. */
+.input-shell{position:relative;display:block;flex:1;min-width:0}
+.input-shell .term-input{width:100%;padding-right:22px;caret-color:var(--green)}
+.input-shell .idle-caret{position:absolute;left:13px;top:50%;width:2px;height:17px;background:var(--green);box-shadow:0 0 8px #b4ff86;transform:translateY(-50%);pointer-events:none;animation:idleCaretBlink 1s steps(1,end) infinite}
+.input-shell:focus-within .idle-caret,.input-shell:has(.term-input:not(:placeholder-shown)) .idle-caret{display:none}
+@keyframes idleCaretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.glitch-name .glitch-row,.glitch-name .glitch-row::before,.glitch-name .glitch-row::after,.input-shell .idle-caret{animation:none!important}.glitch-name .glitch-row::before,.glitch-name .glitch-row::after{opacity:0!important}.input-shell .idle-caret{opacity:1}}
+/* Modern research-lab finish: restrained effects and clear interaction. */
+:root{--panel:#101612;--line:#2c4033;--green:#b6ff91;--muted:#a5b9aa}
+.term-inputbar{background:#0a160f;border-top:1px solid #4c7952}
+.term-hint{color:#b1d8b3;letter-spacing:.01em}
+.input-shell .term-input{min-height:48px;background:#0b2012;border:1px solid #9bf58e;box-shadow:inset 0 0 0 1px #8bec743d,0 0 0 2px #b4ff8618,0 0 24px #77ed8033;border-radius:4px;transition:border-color .18s,box-shadow .18s,background .18s}
+.input-shell .term-input::placeholder{color:#86a88d;opacity:1}
+.input-shell .term-input:focus{background:#0e2917;border-color:#d0ffb4;box-shadow:0 0 0 3px #9efa8733,0 0 30px #9cff8960}
+.term-form .prompt{color:#b4ff86;font-weight:700;text-shadow:0 0 9px #9cff8990}
+.term-btn{border-radius:4px;min-height:48px;letter-spacing:.025em}
+.term-head,.term-meta{background:#0b160f}
+.live-terminal{border-color:#567e5e;box-shadow:0 20px 65px #0009,0 0 0 1px #7cff7822,0 0 40px #5aff6422}
+.live-terminal::after{opacity:.045}
+.term-line{animation:logPop .14s ease-out}
+.panel,.tool,.step{border-color:#2e4134;transition:border-color .2s,transform .2s}
+.panel:hover,.step:hover{border-color:#476d4b}
+.section-head h2,.content-column section > h2{letter-spacing:-.045em}
+@media(prefers-reduced-motion:reduce){.glitch-name .glitch-row::before,.glitch-name .glitch-row::after{animation:none!important;opacity:0!important}}
+</style></head><body><a class="skip" href="#main">Skip to content</a><nav><div class="wrap"><a class="brand" href="#home">AV <em>/ AI.SEC</em></a><div class="links"><a href="#work">Work</a><a href="#tools">Tooling</a><a href="#threats">Security</a><a href="#research">Research</a><a href="#contact">Contact</a></div></div></nav><div class="wrap page-shell"><main class="content-column" id="main"><header class="hero" id="home"><div class="hero-grid"><div class="hero-copy"><div class="overline"><span class="dot"></span> AI SECURITY / SECURITY ENGINEERING</div><h1 class="glitch-name"><span class="glitch-row glitch-first" data-text="Akul">Akul</span><span class="glitch-row glitch-last" data-text="Vinnakota_">Vinnakota_</span></h1><div class="buttons"><a class="btn" href="#work">Explore work ↗</a><a class="btn secondary" href="#tools">Explore AI security tooling ↗</a><a class="btn secondary" href="https://github.com/akul-vinnakota" rel="noopener noreferrer" target="_blank">GitHub ↗</a></div></div></div></header>
+<section id="work"><div class="section-head"><div><div class="eyebrow">01 / Built &amp; investigated</div><h2>Work</h2></div></div><div class="grid two"><article class="panel"><div class="eyebrow">Experience / 2025</div><h3>Cybersecurity Engineer Intern</h3><p class="feature">Westinghouse Electric Company</p><p>Developed and tuned KQL detections in Microsoft Sentinel; investigated endpoint, identity and cloud application alerts; supported Rapid7 vulnerability prioritization and Proofpoint phishing simulations.</p><span class="tag">Sentinel</span><span class="tag">Defender</span><span class="tag">KQL</span><span class="tag">Rapid7</span></article><article class="panel"><div class="itemtop"><h3>Job Scam Detector</h3><span class="pill">Public product</span></div><p class="feature">Web-based recruitment scam detection with explainable risk scores, language/process signals and domain checks. A product-oriented application-security example involving adversarial text and uncertain evidence.</p><p class="detail">Technical discussion: input trust, domain intelligence, risk calibration, labeled evaluation, handling false positives and false negatives.</p><span class="tag a">Threat intelligence</span><span class="tag">Risk scoring</span><span class="tag">Web security</span><div class="sep"><a class="small good" href="https://jobscamdetector.org" rel="noopener noreferrer" target="_blank">Visit deployed product ↗</a></div></article><article class="panel"><div class="itemtop"><h3>Stateful Firewall + WAF Engine</h3><span class="pill">Engineering project</span></div><p class="feature">Python-based network and application filtering prototype using state, packet/PCAP analysis, rules and structured logging.</p><p class="detail">Agent security transfer: deny-by-default controls, observable policy enforcement, and trust-aware network traffic inspection.</p><span class="tag a">Python</span><span class="tag">PCAP</span><span class="tag">Firewall / WAF</span><div class="sep"><a class="small good" href="https://github.com/akul-vinnakota" rel="noopener noreferrer" target="_blank">Explore GitHub ↗</a></div></article><article class="panel"><div class="itemtop"><h3>Detection Engineering Lab</h3><span class="pill">Engineering project</span></div><p class="feature">Security telemetry to Sigma detections and a Python engine, with AI-assisted triage and ATT&amp;CK enrichment workflows.</p><p class="detail">Agent security transfer: correlating model/tool events into rules, investigation context and audit trails.</p><span class="tag a">Sigma</span><span class="tag">Python</span><span class="tag">MITRE ATT&amp;CK</span><div class="sep"><a class="small good" href="https://github.com/akul-vinnakota" rel="noopener noreferrer" target="_blank">Explore GitHub ↗</a></div></article><article class="panel"><div class="itemtop"><h3>SecureForge DevSecOps</h3><span class="pill">Engineering project</span></div><p class="feature">Secure CI practices, dependency/container vulnerability scanning, automated checks and release gating.</p><p class="detail">Agent security transfer: hardened build paths and supply-chain review for tools and runtime images.</p><span class="tag a">GitHub Actions</span><span class="tag">Trivy</span><span class="tag">Docker</span><div class="sep"><a class="small good" href="https://github.com/akul-vinnakota" rel="noopener noreferrer" target="_blank">Explore GitHub ↗</a></div></article></div></section>
+<section id="tools"><div class="section-head"><div><div class="eyebrow">02 / Practical AI security</div><h2>Tooling</h2></div></div><div class="grid"><a class="tool" href="https://garak.ai/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">01</span><span class="arr">↗</span></div><h3>garak</h3><b>LLM vulnerability scanning</b><p>Broad probes for prompt injection, leakage, and unsafe behavior.</p></a><a class="tool" href="https://microsoft.github.io/PyRIT/latest/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">02</span><span class="arr">↗</span></div><h3>PyRIT</h3><b>Multi-turn adversarial testing</b><p>Orchestrate attack scenarios with configurable targets and scorers.</p></a><a class="tool" href="https://www.promptfoo.dev/docs/red-team/agents/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">03</span><span class="arr">↗</span></div><h3>Promptfoo</h3><b>Application red teaming</b><p>Regression checks for agent misuse, tool access and RAG attacks.</p></a><a class="tool" href="https://inspect.aisi.org.uk/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">04</span><span class="arr">↗</span></div><h3>Inspect AI</h3><b>Reproducible evaluations</b><p>Run versioned tasks, solvers and scoring across models.</p></a><a class="tool" href="https://github.com/ethz-spylab/agentdojo" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">05</span><span class="arr">↗</span></div><h3>AgentDojo</h3><b>Agent attack benchmark</b><p>Test prompt injection against tool-using agents in simulated tasks.</p></a><a class="tool" href="https://github.com/protectai/llm-guard" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">06</span><span class="arr">↗</span></div><h3>LLM Guard</h3><b>Input / output scanners</b><p>Layered scanning for injection and sensitive data; not an auth boundary.</p></a><a class="tool" href="https://www.openpolicyagent.org/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">07</span><span class="arr">↗</span></div><h3>OPA / Rego</h3><b>Tool authorization</b><p>Policy-as-code for identity, tenant, scope and resource decisions.</p></a><a class="tool" href="https://docs.docker.com/engine/security/seccomp/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">08</span><span class="arr">↗</span></div><h3>Docker / seccomp</h3><b>Sandbox restrictions</b><p>Contain code execution with minimal privileges and syscall filtering.</p></a><a class="tool" href="https://opentelemetry.io/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">09</span><span class="arr">↗</span></div><h3>OpenTelemetry</h3><b>Action-level visibility</b><p>Trace tool calls, request context, denials and downstream actions.</p></a><a class="tool" href="https://sigmahq.io/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">10</span><span class="arr">↗</span></div><h3>Sigma / KQL</h3><b>Detection engineering</b><p>Convert suspicious execution patterns into auditable alerts.</p></a><a class="tool" href="https://trivy.dev/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">11</span><span class="arr">↗</span></div><h3>Trivy / Semgrep</h3><b>Supply chain and source review</b><p>Scan dependencies, containers and code before release.</p></a><a class="tool" href="https://atlas.mitre.org/" rel="noopener noreferrer" target="_blank"><div class="tooltop"><span class="num">12</span><span class="arr">↗</span></div><h3>MITRE ATLAS</h3><b>Attack technique mapping</b><p>Map threats and testing coverage to adversarial AI behaviors.</p></a></div></section>
+<section id="method"><div class="section-head"><div><div class="eyebrow">03 / Assessment workflow</div><h2>Assessment</h2></div></div><div class="workflow"><div class="step"><b>01 / MAP</b><h3>Enumerate</h3><p>Models, RAG sources, tools, secrets, permissions, network paths.</p></div><div class="step"><b>02 / PROBE</b><h3>Attack</h3><p>garak / PyRIT / Promptfoo scenarios against a defined target.</p></div><div class="step"><b>03 / VERIFY</b><h3>Measure</h3><p>Unauthorized tool calls, leakage, false blocks and task completion.</p></div><div class="step"><b>04 / CONTROL</b><h3>Constrain</h3><p>Least-privilege IAM, tool policy, sandboxing, egress restrictions.</p></div><div class="step"><b>05 / REGRESS</b><h3>Retest</h3><p>Versioned adversarial fixtures, traces and reproducible outcomes.</p></div></div><div class="callout"><b>Security principle:</b> A passed content filter is not permission to execute a tool. Authorization belongs in the application and infrastructure layers.</div></section>
+<section id="threats"><div class="section-head"><div><div class="eyebrow">04 / Attack surfaces</div><h2>Attack surfaces</h2></div></div><div class="casegrid"><article class="panel case"><div class="eyebrow">LLM01 / Prompt injection</div><h3>Untrusted instructions</h3><strong>Attack</strong><p>Malicious text in a web page, PDF or retrieved document redirects an agent.</p><strong>Validate</strong><p>Tool-call denial, origin separation, and benign-task completion.</p></article><article class="panel case"><div class="eyebrow">Agent permissions</div><h3>Excessive agency</h3><strong>Attack</strong><p>An assistant with broad connector scopes reads or modifies resources outside the task.</p><strong>Validate</strong><p>Per-user and per-resource authorization; high-risk action approval.</p></article><article class="panel case"><div class="eyebrow">RAG / Memory</div><h3>Poisoned context</h3><strong>Attack</strong><p>Manipulated retrieved results or persistent memory bias downstream decisions.</p><strong>Validate</strong><p>Provenance, access-scoped retrieval, poisoning tests and corpus review.</p></article><article class="panel case"><div class="eyebrow">Data / Egress</div><h3>Information exfiltration</h3><strong>Attack</strong><p>Agent outputs or tool calls expose secrets to unauthorized destinations.</p><strong>Validate</strong><p>Destination allowlists, DLP checks, canary tests and network telemetry.</p></article><article class="panel case"><div class="eyebrow">Runtime / Execution</div><h3>Unsafe code execution</h3><strong>Attack</strong><p>Untrusted repository instructions trigger shell commands or privileged container access.</p><strong>Validate</strong><p>Non-root runtime, restricted mounts, seccomp and blocked host credentials.</p></article><article class="panel case"><div class="eyebrow">Supply chain</div><h3>Compromised dependencies</h3><strong>Attack</strong><p>Malicious package, model artifact or CI dependency enters an AI application.</p><strong>Validate</strong><p>Provenance, scanning, pinned dependencies and release policy gates.</p></article></div></section>
+<section id="lab"><div class="section-head"><div><div class="eyebrow">05 / Lab blueprint</div><h2>Lab</h2></div></div><div class="terminal">$ ai-sec-lab test --scenario indirect-injection
+[1] load fixture .......... untrusted retrieved page
+[2] propose tool call ..... POST /external-endpoint
+[3] policy check .......... DENY (destination not allowlisted)
+[4] benign task ........... PASS
+[5] trace export .......... run_id / resource / policy / outcome
+
+# Expected assertions — not live scan results</div></section>
+<section id="research"><div class="section-head"><div><div class="eyebrow">06 / Research library</div><h2>Research</h2></div></div><div aria-label="Filter research sources" class="filters" role="group"><button aria-pressed="true" class="filter active" data-filter="All" type="button">All (36)</button><button aria-pressed="false" class="filter" data-filter="Framework" type="button">Frameworks</button><button aria-pressed="false" class="filter" data-filter="Red team" type="button">Red teaming</button><button aria-pressed="false" class="filter" data-filter="Research" type="button">Research</button><button aria-pressed="false" class="filter" data-filter="Engineering" type="button">Engineering</button></div><div class="references"><a class="ref" data-category="Framework" href="https://genai.owasp.org/llm-top-10/" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>OWASP · LLM Top 10</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://genai.owasp.org/2025/12/09/owasp-genai-security-project-releases-top-10-risks-and-mitigations-for-agentic-ai-security/" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>OWASP · Agentic Top 10</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://owasp.github.io/DevSecOpsGuideline/2-Process/2-4-Test/2-4-6-AI-LLM-Application-Security-Testing/" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>OWASP · LLM Application Security Testing</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://atlas.mitre.org/" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>MITRE · ATLAS</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://www.nist.gov/itl/ai-risk-management-framework" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>NIST · AI RMF</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>NIST · Generative AI Profile</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://www.nist.gov/publications/adversarial-machine-learning-taxonomy-and-terminology-attacks-and-mitigations-0" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>NIST · Adversarial ML Taxonomy</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://saif.google/" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>Google · Secure AI Framework</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://aws.amazon.com/blogs/security/introducing-the-aws-generative-ai-security-scoping-matrix/" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>AWS · GenAI Security Scoping Matrix</span><span class="arr">↗</span></a><a class="ref" data-category="Framework" href="https://owasp.org/API-Security/editions/2023/en/0x11-t10/" rel="noopener noreferrer" target="_blank"><span class="refcat">Framework</span><span>OWASP · API Security Top 10</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://garak.ai/" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>NVIDIA · garak</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://microsoft.github.io/PyRIT/latest/" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>Microsoft · PyRIT</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://www.promptfoo.dev/docs/guides/llm-redteaming/" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>Promptfoo · Red Teaming</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://www.promptfoo.dev/docs/red-team/agents/" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>Promptfoo · Agent Testing</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://inspect.aisi.org.uk/" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>UK AISI · Inspect AI</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://inspect.aisi.org.uk/evals/" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>UK AISI · Inspect Evals</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://github.com/meta-llama/PurpleLlama" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>Meta · Purple Llama</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://github.com/meta-llama/PurpleLlama/tree/main/CybersecurityBenchmarks" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>Meta · CyberSec Eval</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://github.com/centerforaisafety/HarmBench" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>HarmBench · Benchmark</span><span class="arr">↗</span></a><a class="ref" data-category="Red team" href="https://github.com/ethz-spylab/agentdojo" rel="noopener noreferrer" target="_blank"><span class="refcat">Red team</span><span>AgentDojo · Benchmark</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://simonwillison.net/series/prompt-injection/" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>Simon Willison · Prompt Injection</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>Simon Willison · Lethal Trifecta</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://arxiv.org/abs/2302.12173" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>Greshake et al. · Indirect Prompt Injection</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://arxiv.org/abs/2307.15043" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>Zou et al. · Universal Adversarial Attacks</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://arxiv.org/abs/2211.09527" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>Perez &amp; Ribeiro · Ignore Previous Prompt</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://arxiv.org/abs/2312.06674" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>Inan et al. · Llama Guard</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://www.anthropic.com/research/many-shot-jailbreaking" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>Anthropic · Many-shot Jailbreaking</span><span class="arr">↗</span></a><a class="ref" data-category="Research" href="https://genai.owasp.org/" rel="noopener noreferrer" target="_blank"><span class="refcat">Research</span><span>OWASP · GenAI Security Project</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://github.com/protectai/llm-guard" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>Protect AI · LLM Guard</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://www.openpolicyagent.org/docs" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>OPA · Policy as Code</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://docs.docker.com/engine/security/seccomp/" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>Docker · Seccomp</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://kubernetes.io/docs/concepts/services-networking/network-policies/" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>Kubernetes · Network Policies</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://opentelemetry.io/docs/concepts/signals/traces/" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>OpenTelemetry · Traces</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://modelcontextprotocol.io/specification/2025-06-18" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>MCP · Specification</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://docs.sigstore.dev/cosign/overview/" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>Sigstore · Cosign</span><span class="arr">↗</span></a><a class="ref" data-category="Engineering" href="https://slsa.dev/" rel="noopener noreferrer" target="_blank"><span class="refcat">Engineering</span><span>SLSA · Supply Chain Levels</span><span class="arr">↗</span></a></div><p class="research-note">Curated source reading list, not a claim that every linked source has been exhaustively reviewed or that every linked tool has been used in production.</p></section>
+<section id="contact"><div class="eyebrow">07 / Connect</div><h2>Contact</h2><div class="buttons"><a class="btn" href="https://github.com/akul-vinnakota" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a class="btn secondary" href="https://jobscamdetector.org" rel="noopener noreferrer" target="_blank">Job Scam Detector ↗</a><a class="btn secondary" href="https://www.linkedin.com/search/results/people/?keywords=Akul%20Vinnakota" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a></div></section></main><aside class="terminal-column" aria-label="Interactive AI security terminal"><div class="live-terminal"><div class="term-head"><span class="term-lights">● ● ●</span><span>claude-code / autonomous-pentest</span><span>interactive mode</span></div><div class="term-meta"><span class="meta-pill">PROMPT INJECTION</span><span class="meta-pill">TOOL ABUSE</span><span class="meta-pill">AUTONOMOUS LOOP</span></div><div class="term-output" id="termOutput" aria-live="polite"></div><div class="term-inputbar"><div class="term-hint">Type <strong>menu</strong> to explore · <strong>about</strong> for questions 1–7 · <strong>run</strong> for the attack simulation</div><div class="term-shortcuts" aria-label="Terminal shortcuts"><button type="button" data-term-command="menu">menu</button><button type="button" data-term-command="about">about me</button><button type="button" data-term-command="run">run attack</button><button type="button" data-term-command="projects">projects</button><button type="button" data-term-command="report">report</button></div><form class="term-form" id="termForm"><span class="prompt">$</span><span class="input-shell"><input class="term-input" id="termInput" aria-label="Terminal command" autocomplete="off" spellcheck="false" placeholder="type run to begin" type="text"/><span class="idle-caret" aria-hidden="true"></span></span><button class="term-btn" type="submit">Send ↗</button></form><div class="status-row"><span id="termStatus">ready</span><span>authorized simulation only</span></div></div></div></aside></div><footer class="wrap"><span>© <span id="year"></span> Akul Vinnakota</span><span>SECURITY ENGINEERING / AI SECURITY</span></footer><button aria-label="Back to top" id="topBtn" type="button">↑</button><script>
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{let category=button.dataset.filter;document.querySelectorAll('.filter').forEach(b=>{let selected=b===button;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected))});document.querySelectorAll('.ref').forEach(item=>item.hidden=category!=='All'&&item.dataset.category!==category)}));
+document.querySelectorAll('.section-head h2,.content-column section > h2,.panel h3,.tool h3,.case h3,.step h3').forEach(el=>el.dataset.glitch=el.textContent.trim());
+document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('topBtn').addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));addEventListener('scroll',()=>document.getElementById('topBtn').classList.toggle('show',scrollY>650),{passive:true});
+
+const termOutput=document.getElementById('termOutput');
+const termForm=document.getElementById('termForm');
+const termInput=document.getElementById('termInput');
+const termStatus=document.getElementById('termStatus');
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+let busy=false;
+const aboutQuestions=[
+  ['Who am I?', ['Akul Vinnakota — cybersecurity student at Purdue University.', 'Focus: security engineering, detection engineering, and AI application security.']],
+  ['What security experience do I have?', ['Cybersecurity Engineer Intern at Westinghouse Electric Company (summer 2025).', 'Worked with Microsoft Sentinel / KQL detections, Defender, cloud/identity alerts, vulnerability prioritization, and phishing simulations.']],
+  ['What have I built?', ['Job Scam Detector — explainable job/recruitment scam risk checks.', 'Stateful Firewall + WAF Engine — simulated stateful filtering and application-layer attack detection.', 'Detection Engineering Lab — Sigma, Python, triage and security telemetry workflows.', 'SecureForge DevSecOps — CI security scanning and container/dependency checks.']],
+  ['Why AI security?', ['Interested in testing agent tool permissions, prompt injection, retrieval trust boundaries, and securing real-world model actions.', 'The goal is to apply established security engineering practices to AI-enabled systems.']],
+  ['Which tools and technologies?', ['Hands-on project and internship topics: Python, KQL, Microsoft Sentinel, Defender, AWS, Linux, Docker, Trivy and Sigma.', 'Research/tooling explored on this site: garak, PyRIT, Promptfoo, Inspect AI, AgentDojo, OPA/Rego and LLM Guard.', 'Listed research tools are not all claims of professional deployment.']],
+  ['What am I researching?', ['AI prompt injection, excessive agency, MCP/connector risks, sensitive data exposure, adversarial testing, policy gates and evaluation.', 'See the Research and Attack surfaces sections for source reading and concrete test patterns.']],
+  ['How can I connect?', ['GitHub: github.com/akul-vinnakota', 'Project: jobscamdetector.org', 'Use the Contact section below for current links.']]
+];
+function showAbout(){
+  addLine('╭─ ABOUT AKUL · SELECT A NUMBER ──────────╮','ok');
+  aboutQuestions.forEach(([question], i)=>addLine('  '+(i+1)+'. '+question,'help'));
+  addLine('Type 1–7 to read an answer, or menu to return.','dim');
+}
+function showMenu(){
+  addLine('╭─ AI SECURITY PORTFOLIO / MAIN MENU ────╮','ok');
+  addLine('  about       Ask about Akul (questions 1–7)','help');
+  addLine('  run         Simulate a chained autonomous pentest','help');
+  addLine('  projects    Browse engineering projects','help');
+  addLine('  tools       Explore AI security tooling','help');
+  addLine('  research    Open the research library','help');
+  addLine('  report      See a sample attack report','help');
+  addLine('  help        Show all commands','help');
+  addLine('  clear       Reset terminal','help');
+  addLine('Select a command, or type a number from 1 to 7.','dim');
+}
+function showSection(sectionId, title){
+  addLine('Opening '+title+' section...','ok');
+  document.getElementById(sectionId)?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showReport(){
+  addLine('╭─ SAMPLE / SIMULATED ASSESSMENT ────────╮','ok');
+  addLine('Target: fictional sandbox-agent.local','dim');
+  addLine('Findings: overly broad connector scope; debug trace leak','warn');
+  addLine('Controls: denied unauthorized shell and egress calls','ok');
+  addLine('Next: reduce scopes, redact traces, retest','help');
+  addLine('No live target or real attack is performed by this demo.','dim');
+}
+
+
+function addLine(text,cls=''){
+  const line=document.createElement('span');
+  line.className='term-line'+(cls?' '+cls:'');
+  line.textContent=text;
+  termOutput.appendChild(line);
+  termOutput.scrollTop=termOutput.scrollHeight;
+}
+function addBoot(){
+  termOutput.innerHTML='';
+  addLine('AI SECURITY TERMINAL // PORTFOLIO DEMO','dim');
+  addLine('Explore this site or run a simulated security assessment.','help');
+  showMenu();
+  termStatus.textContent='ready';
+}
+async function runAttack(){
+  if(busy) return;
+  busy=true;
+  termStatus.textContent='running attack chain';
+  const lines=[
+    ['$ claude --project ai-security-lab --mode autonomous-pentest','cmd'],
+    ['[00] scope loaded · target: sandbox-agent.local · mode: authorized simulation','dim'],
+    ['[01] crawling routes /chat /tasks /admin /mcp',''],
+    ['[MAP] discovered 14 endpoints · 3 tool actions · 2 external connectors','ok'],
+    ['[02] generating prompt injection payload chain','dim'],
+    ['[TEST] indirect injection via uploaded markdown and retrieved context','warn'],
+    ['[03] monitoring tool-call boundary','dim'],
+    ['[BLOCKED] unauthorized shell execution denied','ok'],
+    ['[04] attempting retrieval poisoning and memory persistence','dim'],
+    ['[OBSERVE] malicious instructions influence model reasoning','warn'],
+    ['[05] enumerating MCP + connector scopes','dim'],
+    ['[RISK] connected service permissions exceed least privilege','warn'],
+    ['[06] fuzzing remote fetch input for SSRF-style behavior','dim'],
+    ['[PASS] outbound allowlist enforced','ok'],
+    ['[07] auditing traces, logs, and debug transcripts','dim'],
+    ['[FINDING] API token echoed in verbose trace output','bad'],
+    ['[08] validating sandbox, seccomp, and network policy','dim'],
+    ['[PASS] container isolation intact','ok'],
+    ['$ garak --target local-model --probes promptinject,jailbreak,leakage','cmd'],
+    ['[garak] 41 cases executed · 2 prompts flagged for follow-up','ok'],
+    ['$ promptfoo eval -c agent-safety.yaml','cmd'],
+    ['[promptfoo] tool safety regression complete · 18/20 passed','ok'],
+    ['$ inspect-ai run evals/agent-scope.py','cmd'],
+    ['[inspect] confirmation gate blocked unauthorized external action','ok'],
+    ['$ pyrit attack --objective "coerce tool misuse"','cmd'],
+    ['[pyrit] policy bypass attempt observed in retrieved context','warn'],
+    ['[pyrit] final action denied by approval control','ok'],
+    ['[09] mapping findings to OWASP LLM + MITRE ATLAS','dim'],
+    ['[10] remediation plan: tighten scopes · redact secrets · add policy gate',''],
+    ['[DONE] chained autonomous attack complete · report saved','ok'],
+    ['$ <idle>','cmd']
+  ];
+  for(const [text,cls] of lines){ addLine(text,cls); await sleep(280); }
+  busy=false;
+  termStatus.textContent='ready';
+}
+function showHelp(){
+  showMenu();
+  addLine('Questions 1–7 also work directly without typing about first.','dim');
+}
+async function executeCommand(raw){
+  const command=raw.trim().toLowerCase();
+  if(!command) return;
+  addLine('$ '+command,'cmd');
+  if(command==='run'){
+    if(busy){addLine('[busy] simulation already running','warn');return;}
+    await runAttack();
+  } else if(command==='menu' || command==='help'){
+    showMenu();
+  } else if(command==='about' || command==='ask'){
+    showAbout();
+  } else if(/^[1-7]$/.test(command)){
+    const [question, answers]=aboutQuestions[Number(command)-1];
+    addLine('['+command+'/7] '+question,'ok');
+    answers.forEach(answer=>addLine('  '+answer,'help'));
+    addLine('Choose another 1–7, type about or menu.','dim');
+  } else if(command==='projects' || command==='work'){
+    showSection('work','Work');
+    addLine('Projects: Job Scam Detector, Stateful Firewall/WAF, Detection Engineering Lab, SecureForge DevSecOps.','help');
+  } else if(command==='tools' || command==='tooling'){
+    showSection('tools','Tooling');
+  } else if(command==='research'){
+    showSection('research','Research');
+  } else if(command==='contact'){
+    showSection('contact','Contact');
+  } else if(command==='report'){
+    showReport();
+  } else if(command==='clear'){
+    addBoot();
+  } else {
+    addLine('[error] unknown command · type menu or help','bad');
+  }
+}
+termForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const command=termInput.value;
+  termInput.value='';
+  executeCommand(command);
+});
+document.querySelectorAll('[data-term-command]').forEach(button=>button.addEventListener('click',()=>executeCommand(button.dataset.termCommand)));
+addBoot();
+</script></body></html>
